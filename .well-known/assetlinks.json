@@ -1,0 +1,14 @@
+[
+    {
+        "relation": [
+            "delegate_permission/common.handle_all_urls"
+        ],
+        "target": {
+            "namespace": "android_app",
+            "package_name": "com.wtrfl.capsulewardrobe",
+            "sha256_cert_fingerprints": [
+                "2D:19:FC:65:67:C6:21:25:FD:7D:E4:5B:69:52:1E:4D:F4:6D:1A:D2:6D:31:01:7A:1C:11:C1:18:CB:49:D9:D4"
+            ]
+        }
+    }
+]
