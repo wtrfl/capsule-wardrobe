@@ -1,0 +1,65 @@
+{
+    "background_color": "#ffffff",
+    "description": "A small application for creating and viewing capsule wardrobes.",
+    "dir": "ltr",
+    "display_override": [
+        "standalone",
+        "window-controls-overlay"
+    ],
+    "display": "standalone",
+    "name": "Capsule Wardrobe",
+    "orientation": "portrait",
+    "scope": "/",
+    "short_name": "Capsule Wardrobe",
+    "start_url": "/",
+    "theme_color": "#ffffff",
+    "categories": [
+        "lifestyle",
+        "utilities"
+    ],
+    "icons": [
+        {
+            "src": "meta/icons/android-launchericon-512-512.png",
+            "sizes": "512x512",
+            "purpose": "any"
+        },
+        {
+            "src": "meta/icons/android-launchericon-192-192.png",
+            "sizes": "192x192"
+        },
+        {
+            "src": "meta/icons/android-launchericon-144-144.png",
+            "sizes": "144x144"
+        },
+        {
+            "src": "meta/icons/android-launchericon-96-96.png",
+            "sizes": "96x96"
+        },
+        {
+            "src": "meta/icons/android-launchericon-72-72.png",
+            "sizes": "72x72"
+        },
+        {
+            "src": "meta/icons/android-launchericon-48-48.png",
+            "sizes": "48x48"
+        }
+    ],
+    "screenshots": [
+        {
+            "src": "meta/ss/1.png",
+            "sizes": "499x844",
+            "type": "image/png",
+            "form_factor": "tall",
+            "label": "homescreen"
+        }
+    ],
+    "shortcuts": [
+        {
+            "name": "Generate new outfit",
+            "url": "/",
+            "description": "Creates a new outfit"
+        }
+    ],
+    "id": "wtrfl-capsulewardrobe",
+    "lang": "en"
+}

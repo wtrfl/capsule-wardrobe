@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capsule Wardrobe</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="manifest" href="manifest.json" crossorigin="use-credentials">
+    <script src="https://kit.fontawesome.com/b99b10e40e.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <div class="tooltip-container">
+        <div class="tooltip" id="tooltip">
+            <span id="tooltipText">if this is stuck, reopen the app</span>
+        </div>
+    </div>
+
+    <div class="modal-container" id="modalContainer">
+        <div class="modal">
+            <div class="modal-header">
+                <span id="headerText">error</span>
+            </div>
+            <div class="modal-body">
+                <span id="modalText">if you see this, try to close and reopen the app</span>
+            </div>
+            <div class="links">
+                <div class="row">
+                    <button class="link-button" id="modalButton1">Cancel</button>
+                    <button class="link-button" id="modalButton2">OK</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page home" id="home-page">
+        <button class="link-button settings" id="home-settings"><i class="fa-solid fa-gear"></i></button>
+        <span class="title">CAPSULE WARDROBE</span>
+        <div class="generator">
+            <span class="name" id="home-wardrobe-name">(no wardrobes available)</span>
+            <!-- <span class="id">outfit id #01h9cb623</span> -->
+            <div class="outfit">
+                <div>
+                    <img src="icons/layers.png" alt="JACKET">
+                    <span id="home-layer"></span>
+                </div>
+                <div>
+                    <img src="icons/shirts.png" alt="JACKET">
+                    <span id="home-shirt"></span>
+                </div>
+                <div>
+                    <img src="icons/pants.png" alt="JACKET">
+                    <span id="home-pants"></span>
+                </div>
+                <div>
+                    <img src="icons/shoes.png" alt="JACKET">
+                    <span id="home-shoes"></span>
+                </div>
+            </div>
+            
+        </div>
+        <div class="links">
+            <div class="row">
+                <button class="link-button" id="home-manage-btn"><i class="fa-solid fa-list-check"></i> Manage Wardrobes</button>
+                <button class="link-button" id="home-clothes-btn"><i class="fa-solid fa-plus"></i> Add New Clothes</button>
+            </div>
+            <button class="primary big-bottom-button" id="home-shuffle-btn"><i class="fa-solid fa-shuffle"></i> Shuffle</button>
+        </div>
+    </div>
+
+    <div class="page wardrobes" id="wardrobes-page">
+        <div class="headerbar">
+            <button class="close" id="wardrobes-close"><i class="fa-solid fa-xmark"></i></button>
+            <span>WARDROBES</span>
+        </div>
+        <div class="wardrobe-list" id="wardrobe-list"></div>
+        <button class="primary big-bottom-button" id="create-wardrobe-button">
+            <i class="fa-solid fa-plus"></i> Create New Wardrobe
+        </button>
+    </div>
+
+    <div class="page create-wardrobe" id="create-page">
+        <div class="headerbar">
+            <button class="close" id="create-close"><i class="fa-solid fa-xmark"></i></button>
+            <span>WARDROBE WIZARD</span>
+        </div>
+        <div class="cpage name-cpage shown" id="create-name-page">
+            <div>
+                <b>Name your wardrobe</b>
+                <span>Enter any name, such as "summer collection" or "winter dark"</span>
+                <input type="text" id="new-wardrobe-name" class="name-box" placeholder="name" />
+                <span class="error" id="new-name-error"></span>
+            </div>
+            <span>.</span>
+        </div>
+        <div class="cpage clothes-cpage" id="add-clothes-page">
+            <span class="subhead">Add <b id="picking-category">layers</b> to the wardrobe</span>
+            <span>These are all of the options you've added so far. Add more from the home screen.</span>
+            <div class="clothes-list" id="clothes-list"></div>
+        </div>
+        <button class="primary big-bottom-button" id="create-next-button">
+            Next <i class="fa-solid fa-chevron-right"></i>
+        </button>
+    </div>
+
+    <div class="page add-clothes" id="clothes-page">
+        <div class="headerbar">
+            <button class="close" id="clothes-close"><i class="fa-solid fa-xmark"></i></button>
+            <span>ADD CLOTHES</span>
+        </div>
+        <div class="input-box">
+            <b>Quick Add</b>
+            <span>Give the clothing a name you recognize, like "green shoes" or "nirvana shirt", then press the correct button below.</span>
+            <input type="text" id="add-clothes-box" class="name-box" placeholder="white pants">
+        </div>
+        <div style="text-align: center;">
+            <span style="display: block;margin: 10px;">add to</span>
+            <div class="button-grid">
+                <button class="clothes-type-button" id="type-layers-button">LAYERS</button>
+                <button class="clothes-type-button" id="type-shirts-button">SHIRTS</button>
+                <button class="clothes-type-button" id="type-pants-button">PANTS</button>
+                <button class="clothes-type-button" id="type-shoes-button">SHOES</button>
+            </div>
+        </div>
+        <button class="secondary big-bottom-button" id="clothes-close-big">
+            <i class="fa-solid fa-xmark"></i> Close
+        </button>
+    </div>
+
+    <div class="page settings-page" id="settings-page">
+        <div class="headerbar">
+            <button class="close" id="settings-close"><i class="fa-solid fa-xmark"></i></button>
+            <span>SETTINGS</span>
+        </div>
+        <button class="settings-button" id="reset-data-button">
+            <span>Reset Data</span>
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <button class="settings-button" id="export-data-button">
+            <span>Export Data</span>
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+        <span class="settings-info">
+            Capsule Wardrobe<br />
+            v0.1.0<br />
+            <br />
+            Made with ♥<br />
+            by Kaan for Mommy<br/>
+            <br />
+            Icons from Flaticon<br />
+            <a href="https://www.flaticon.com/free-icons/jacket" title="jacket icons">jacket (Victoruler)</a> - <a href="https://www.flaticon.com/free-icons/tshirt" title="tshirt icons">tshirt (bqlqn)</a><br />
+            <a href="https://www.flaticon.com/free-icons/pants" title="pants icons">pants (Good Ware)</a> - <a href="https://www.flaticon.com/free-icons/footwear" title="footwear icons">shoes (Smashicons)</a>
+        </span>
+        <span class="settings-info" id="settings-info">
+            <b>Your Data</b><br />
+            Layers<br/>
+            Layer 1<br/>
+            Layer 2
+        </span>
+    </div>
+
+    <script>
+        if (typeof navigator.serviceWorker !== 'undefined') {
+            navigator.serviceWorker.register('sw.js')
+        }
+    </script>
+    <script src="jquery-3.7.1.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
