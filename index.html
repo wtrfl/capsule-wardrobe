@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Capsule Wardrobe</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="manifest" href="manifest.json" crossorigin="use-credentials">
@@ -58,6 +59,9 @@
                 </div>
             </div>
             
+            <button class="small-link-button" id="all-list-button">
+                ALL OUTFITS <i class="fa-solid fa-chevron-right"></i>
+            </button>
         </div>
         <div class="links">
             <div class="row">
@@ -157,6 +161,17 @@
             Layer 1<br/>
             Layer 2
         </span>
+    </div>
+
+    <div class="page all-page" id="all-page">
+        <div class="headerbar">
+            <button class="close" id="all-close"><i class="fa-solid fa-xmark"></i></button>
+            <span>ALL OUTFITS</span>
+        </div>
+        <div id="list-all-content"></div>
+        <button class="secondary big-bottom-button" id="all-close-big" style="position:fixed;bottom:0;left:0;">
+            <i class="fa-solid fa-xmark"></i> Close
+        </button>
     </div>
 
     <script>

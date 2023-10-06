@@ -9,6 +9,7 @@ const closeAll = () => {
     document.getElementById('create-page').classList.remove('shown');
     document.getElementById('clothes-page').classList.remove('shown');
     document.getElementById('settings-page').classList.remove('shown');
+    document.getElementById('all-page').classList.remove('shown');
 }
 
 const modalContainer = document.getElementById('modalContainer'),
@@ -146,6 +147,19 @@ $("#home-settings").on('click', () => {
     settingsPrep();
     document.getElementById('settings-page').classList.add('shown');
 })
+
+$("#home-settings").on('click', () => {
+    closeAll();
+    settingsPrep();
+    document.getElementById('settings-page').classList.add('shown');
+})
+
+$("#all-list-button").on('click', () => {
+    closeAll();
+    prepAllOutfits();
+    document.getElementById('all-page').classList.add('shown');
+})
+
 
 // wardrobe list page
 const handleCheckbox = (index) => {
@@ -474,3 +488,52 @@ $("#settings-close").on('click', () => {
     closeAll();
     document.getElementById('home-page').classList.add('shown');
 });
+
+// list all page
+
+const allOutfitsContent = document.getElementById('list-all-content');
+const printAllOutfits = (index) => {
+    allOutfitsContent.innerHTML = "";
+    let wardrobe = data.wardrobes[index];
+    let count = 1;
+    for (let i=0; i<wardrobe.layers.length; i++) {
+        for (let j=0; j<wardrobe.shirts.length; j++) {
+            for (let k=0; k<wardrobe.pants.length; k++) {
+                for (let l=0; l<wardrobe.shoes.length; l++) {
+                    let e = document.createElement('span');
+                    e.classList.add('outfitsListItem');
+                    e.innerHTML = `
+                    ${count}. ${data.layers[wardrobe.layers[i]]}<br />
+                    + ${data.shirts[wardrobe.shirts[j]]}<br />
+                    + ${data.pants[wardrobe.pants[k]]}<br />
+                    + ${data.shoes[wardrobe.shoes[l]]}
+                    `
+                    allOutfitsContent.appendChild(e);
+                    count++;
+                }
+            }
+        }
+    }
+}
+const prepAllOutfits = () => {
+    allOutfitsContent.innerHTML = "";
+    [...data.wardrobes].reverse().forEach((wardrobe, index) => {
+        let modIndex = data.wardrobes.length-1-index;
+        let e = document.createElement('button');
+        e.classList.add('settings-button')
+        e.onclick = () => {printAllOutfits(modIndex)}
+        e.innerHTML = `
+        <span>${wardrobe.name}</span>
+        <i class="fa-solid fa-chevron-right"></i>
+        `
+        allOutfitsContent.appendChild(e);
+    })
+}
+const closeListAll = () => {
+    allOutfitsContent.innerHTML = "";
+    closeAll();
+    document.getElementById('home-page').classList.add('shown');
+}
+
+$("#all-close").on('click', closeListAll);
+$("#all-close-big").on('click', closeListAll);

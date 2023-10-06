@@ -51,6 +51,14 @@
   button.link-button:first-of-type {
     border-right: 1px solid #ccc;
   }
+  button.small-link-button {
+    background: none;
+    color: black;
+    flex: 1;
+    padding: 5px;
+    border-radius: 0;
+    font-size: 0.9rem;
+  }
   /* tooltip */
   .tooltip-container {
     display: flex;
@@ -344,7 +352,7 @@
     color: red;
   }
   /* settings page */
-  .settings-page .settings-button {
+  .settings-button {
     border-bottom: 1px solid #ccc;
     background-color: #fff;
     display: flex;
@@ -368,4 +376,12 @@
   #settings-info {
     margin-bottom: 20px;
   }
-  
+  /* all page */
+  #list-all-content {
+    display: flex;
+    flex-direction: column;
+  }
+  .outfitsListItem {
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+  }
