@@ -1,14 +1,14 @@
 [
     {
-        "relation": [
-            "delegate_permission/common.handle_all_urls"
-        ],
-        "target": {
-            "namespace": "android_app",
-            "package_name": "com.wtrfl.capsulewardrobe",
-            "sha256_cert_fingerprints": [
-                "2D:19:FC:65:67:C6:21:25:FD:7D:E4:5B:69:52:1E:4D:F4:6D:1A:D2:6D:31:01:7A:1C:11:C1:18:CB:49:D9:D4"
-            ]
-        }
+      "relation": [
+        "delegate_permission/common.handle_all_urls"
+      ],
+      "target": {
+        "namespace": "android_app",
+        "package_name": "com.wtrfl.capsulewardrobe",
+        "sha256_cert_fingerprints": [
+          "E3:BD:E5:FF:BA:CB:5C:3B:45:87:2C:28:18:3D:83:55:39:E7:51:19:12:50:8C:5B:E1:6D:2A:9D:00:70:9C:BC"
+        ]
+      }
     }
-]
+  ]
